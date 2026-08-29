@@ -1,205 +1,205 @@
 # ANIMERIA
 
-Animeria; monokrom (siyah, beyaz ve gri tonları) tasarım diline sahip, çoklu anime kaynaklarını tek bir arayüzde birleştiren, AniList entegrasyonlu ve gelişmiş güvenlik katmanlarına sahip açık kaynak bir anime izleme ve profil takip platformudur.
+Animeria is an open-source, monochrome-styled anime streaming and watchlist tracking platform. It aggregates multiple anime providers into a unified interface, integrates with the AniList GraphQL API, and features a multi-layered backend security architecture.
 
-[Proje Deposu](https://github.com/fadimrak/animeria)
-
----
-
-## Icerik Tablosu
-
-- [Proje Ozellikleri](#proje-ozellikleri)
-- [Teknoloji Yigini](#teknoloji-yigini)
-- [Dizin Yapisi](#dizin-yapisi)
-- [Yerel Gelistirme (Localhost) Kurulumu](#yerel-gelistirme-localhost-kurulumu)
-- [Canliya Alma (Production Deployment) Rehberi](#canliya-alma-production-deployment-rehberi)
-  - [Neden Mevcut Surum Yalnizca Localhost Icin Uygundur?](#neden-mevcut-surum-yalnizca-localhost-icin-uygundur)
-  - [Canliya Almadan Once Yapilmasi Gereken Guncellemeler](#canliya-almadan-once-yapilmasi-gereken-guncellemeler)
-  - [Adim Adim Dagitim Secenekleri](#adim-adim-dagitim-secenekleri)
-- [Ortam Degiskenleri (.env Referansi)](#ortam-degiskenleri-env-referansi)
-- [Guvenlik Mimarisi](#guvenlik-mimarisi)
-- [Lisans ve DMCA Bildirimi](#lisans-ve-dmca-bildirimi)
+[GitHub Repository](https://github.com/fadimrak/animeria)
 
 ---
 
-## Proje Ozellikleri
+## Table of Contents
 
-### 1. Gelismis Video Oynatici ve Akis
-- **HLS (.m3u8) Akis Destegi:** Hls.js tabanli, adaptif ve yuksek performansli video oynatimi.
-- **Coklu Saglayici (Multi-Provider):** MKissa, Reanime, AniZone, AniKoto, AnimeGG, AniNeko, AniDB, 2dhive, Kickassanime, AnimeDunya gibi farkli kaynaklar arasinda dinamik gecis.
-- **Alt Yazi ve Dublaj:** Sub ve Dub secenekleri arasinda tek tikla gecis.
-- **AniSkip Entegrasyonu:** Anime acilis (OP) ve kapanis (ED) kisimlarini otomatik veya manuel atlama.
-- **Oynatici Kontrolleri:** Oynatma hizi (0.25x - 2x), video cozunurluk secimi (1080p, 720p, 480p, 360p), PIP (Picture-in-Picture), tam ekran ve klavye kisayollari.
-- **Dahili HLS ve Segment Proxy:** Kaynak sunucularin CORS, hotlinking veya referer kisitlamalarini sunucu tarafinda asan entegre proxy mekanizmasi.
-
-### 2. Kesfet ve Anime Katalogu
-- **AniList GraphQL Entegrasyonu:** Trendler, populer animeler, en yuksek puanlilar ve guncel sezon takvimi.
-- **Detayli Filtreleme:** Tur, yayin yili, sezon, format (TV, Movie, OVA, ONA, Special) ve puanlama filtreleri.
-- **Dinamik Arama:** Baslik ve karakter bazli anlik sonuclar.
-
-### 3. Kullanici Yonetimi ve Istatistikler
-- **Izleme Listeleri (Watchlist):** Izleniyor, Tamamlandi, Planlandi, Duraklatildi ve Birakildi kategorileri.
-- **Kapsamli Profil Istatistikleri:** Toplam izlenen saat, gun, bolum sayisi, ortalama puan ve tur dagilim grafigi.
-- **Harici Liste Ice Aktarma:** AniList veya MyAnimeList (MAL) hesaplarindan tek tikla liste senkronizasyonu.
-- **Bolum Yorumlari:** Bolum bazli yorum yapma, spoiler isaretleme ve begeni mekanizmasi.
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Project Directory Structure](#project-directory-structure)
+- [Local Development Setup (Localhost)](#local-development-setup-localhost)
+- [Production Deployment Guide](#production-deployment-guide)
+  - [Why the Current Build is Optimized for Localhost](#why-the-current-build-is-optimized-for-localhost)
+  - [Required Changes Before Production Deployment](#required-changes-before-production-deployment)
+  - [Step-by-Step Deployment Options](#step-by-step-deployment-options)
+- [Environment Variables (.env Reference)](#environment-variables-env-reference)
+- [Security Architecture](#security-architecture)
+- [License and DMCA Notice](#license-and-dmca-notice)
 
 ---
 
-## Teknoloji Yigini
+## Key Features
 
-| Bilesen | Kullanilan Teknolojiler |
+### 1. Advanced Video Player & Streaming
+- **HLS (.m3u8) Streaming Support:** Built on Hls.js for adaptive bitrate and low-latency playback.
+- **Multi-Provider Aggregation:** Instant source switching across providers including MKissa, Reanime, AniZone, AniKoto, AnimeGG, AniNeko, AniDB, 2dhive, Kickassanime, and AnimeDunya.
+- **Sub & Dub Selector:** Seamlessly switch between Japanese audio with subtitles and English/localized dubs.
+- **AniSkip Integration:** Automatic or manual one-click skipping for anime Openings (OP) and Endings (ED).
+- **Custom Player Controls:** Playback speed adjustments (0.25x - 2x), resolution selection (1080p, 720p, 480p, 360p), Picture-in-Picture (PIP), full-screen mode, and comprehensive keyboard shortcuts.
+- **Built-in HLS & Segment Stream Proxy:** Internal proxy engine to bypass upstream CORS restrictions, hotlinking blocks, and referer checks.
+
+### 2. Catalog & Discovery Engine
+- **AniList GraphQL Integration:** Real-time trending, popular releases, top-rated rankings, and seasonal airing schedules.
+- **Advanced Filtering:** Multi-criteria filtering by genres, release year, season, media format (TV, Movie, OVA, ONA, Special), and sort metrics.
+- **Real-Time Live Search:** Fast querying across titles, alternate romanized names, and character databases.
+
+### 3. User Profiles & Watchlist Tracking
+- **Categorized Watchlists:** Manage titles under Watching, Completed, Planning, Paused, and Dropped statuses.
+- **In-Depth Profile Analytics:** Real-time metrics calculating total hours and days watched, completed episodes, average rating, and genre breakdown charts.
+- **External Account Sync:** One-click list import and synchronization from AniList and MyAnimeList (MAL) accounts.
+- **Episode Discussions:** Episode-specific comment section featuring spoiler tags and like interactions.
+
+---
+
+## Tech Stack
+
+| Layer | Technologies |
 |---|---|
 | **Backend** | Node.js (ES Modules), Express.js, Anivexa Core API Engine |
-| **Frontend** | Vanilla JavaScript (ES6+), HTML5, Vanilla CSS3 (Custom Design System), Canvas Topography FX |
-| **API ve Veri** | AniList GraphQL API, AniSkip API, Google Translate API |
-| **Guvenlik** | Helmet, Zod Dogrulama, Speakeasy (TOTP 2FA), JWT ve HttpOnly Cerezler, sanitize-html, SSRF Guard, Scrypt Password Hashing |
-| **Veritabani** | JSON Flat-File DB (data/*.json) - Gelistirme ortami icin |
-| **Konteyner** | Docker (node:20-slim + curl) |
+| **Frontend** | Vanilla JavaScript (ES6+), Semantic HTML5, Vanilla CSS3 (Custom Design System), Canvas Topography FX |
+| **APIs & Data** | AniList GraphQL API, AniSkip API, Google Translate API |
+| **Security** | Helmet, Zod Validation, Speakeasy (TOTP 2FA), JWT & HttpOnly Cookies, sanitize-html, SSRF Guard, Scrypt Password Hashing |
+| **Database** | JSON Flat-File Storage (data/*.json) - *For local development* |
+| **Containerization** | Docker (node:20-slim + curl) |
 
 ---
 
-## Dizin Yapisi
+## Project Directory Structure
 
 ```text
 animeria/
-|-- Anivexa-API-main/        # Anime saglayicilari ve scraper motoru
+|-- Anivexa-API-main/        # Integrated anime provider scrapers and mapping engine
 |-- backend/
-|   |-- db.js                # Veritabani islemleri (Kullanicilar, oturumlar, listeler, yorumlar)
-|   `-- security/            # Guvenlik modulleri
-|       |-- auditLogger.js   # Denetim ve erisim loglama
-|       |-- env.js           # Ortam degiskeni dogrulama
-|       |-- fileUpload.js    # Gorsel yukleme ve buffer kontrolleri
-|       |-- headers.js       # Helmet, CSP, HSTS ve guvenlik basliklari
-|       |-- jwt.js           # JWT token uretimi ve rotasyonu
-|       |-- rateLimiter.js   # Hiz sinirlandirma (Rate limiting)
-|       |-- rbac.js          # Rol tabanli yetkilendirme (USER / ADMIN)
-|       |-- sanitizer.js     # XSS ve NoSQL/Prototype Pollution temizleyici
-|       |-- ssrfGuard.js     # SSRF (Localhost ve Cloud Metadata) korumasi
-|       |-- twoFactor.js     # 2FA (TOTP QR ve Kurtarma Kodlari)
-|       `-- validator.js     # Zod giris semalari
-|-- data/                    # JSON veri dosyalari (users, sessions, watchlists, comments)
-|-- public/                  # Frontend statik dosyalari
-|   |-- css/                 # Monokrom stil dosyalari
-|   |-- js/                  # Istemci scriptleri (api.js, player.js, auth.js, ui.js vb.)
-|   |-- browse.html          # Arama ve filtreleme sayfasi
-|   |-- dmca.html            # DMCA ve Telif hakki sayfasi
-|   |-- index.html           # Ana sayfa
-|   |-- profile.html         # Profil, istatistikler ve 2FA ayarlari
-|   |-- top.html             # En yuksek puanlilar sayfasi
-|   |-- trending.html        # Trend animeler sayfasi
-|   `-- watch.html           # Video oynatici sayfasi
-|-- .env.example             # Ornek ortam degiskenleri sablonu
-|-- Dockerfile               # Konteyner build yapilandirmasi
-|-- package.json             # Bagimliliklar ve npm betikleri
-`-- server.js                # Ana Express sunucusu ve API rotalari
+|   |-- db.js                # Data access layer (users, sessions, watchlists, comments)
+|   `-- security/            # Security middleware suite
+|       |-- auditLogger.js   # Audit and access logging
+|       |-- env.js           # Environment configuration validator
+|       |-- fileUpload.js    # Image upload and buffer validation
+|       |-- headers.js       # Helmet, CSP, HSTS, and HTTP security headers
+|       |-- jwt.js           # JWT token generation and refresh rotation
+|       |-- rateLimiter.js   # Layered rate limiters (Global, Auth, Comments, Proxy)
+|       |-- rbac.js          # Role-based access control (USER / ADMIN)
+|       |-- sanitizer.js     # XSS and NoSQL/Prototype Pollution sanitization
+|       |-- ssrfGuard.js     # SSRF mitigation (blocks Localhost & Cloud Metadata IPs)
+|       |-- twoFactor.js     # 2FA engine (TOTP QR codes & emergency backup codes)
+|       `-- validator.js     # Zod schema input validation
+|-- data/                    # Local JSON data files (users, sessions, watchlists, comments)
+|-- public/                  # Frontend static web assets
+|   |-- css/                 # Monochrome CSS stylesheets
+|   |-- js/                  # Client scripts (api.js, player.js, auth.js, ui.js, etc.)
+|   |-- browse.html          # Browse and advanced filter page
+|   |-- dmca.html            # DMCA copyright policy and takedown request page
+|   |-- index.html           # Landing home page
+|   |-- profile.html         # User profile, statistics, and 2FA settings page
+|   |-- top.html             # Top-rated anime ranking page
+|   |-- trending.html        # Trending anime showcase page
+|   `-- watch.html           # Video player streaming page
+|-- .env.example             # Environment variable template
+|-- Dockerfile               # Production container definition
+|-- package.json             # Project dependencies and npm scripts
+`-- server.js                # Primary Express server and API routing entrypoint
 ```
 
 ---
 
-## Yerel Gelistirme (Localhost) Kurulumu
+## Local Development Setup (Localhost)
 
-Projeyi yerel gelistirme ortaminda calistirmak icin asagidaki adimlari izleyin:
+Follow these steps to run the application locally on your machine:
 
-### 1. Gereksinimler
-- Node.js (v18 veya uzeri, Node.js v20 LTS tavsiye edilir)
-- npm veya pnpm / yarn
-- curl (Linux/macOS sistemlerde varsayilan bulunur, Windows 10/11 sistemlerde mevcuttur)
+### 1. Prerequisites
+- Node.js (v18.0.0 or higher, **Node.js v20 LTS recommended**)
+- npm, pnpm, or yarn
+- curl (Standard on modern Linux, macOS, and Windows 10/11)
 
-### 2. Depoyu Klonlayin ve Bagimliliklari Yukleyin
+### 2. Clone the Repository & Install Dependencies
 ```bash
 git clone https://github.com/fadimrak/animeria.git
 cd animeria
 npm install
 ```
 
-### 3. Ortam Degiskenlerini Hazirlayin
-`.env.example` dosyasini kopyalayarak `.env` olusturun:
+### 3. Configure Environment Variables
+Create your local `.env` file from the provided template:
 ```bash
 cp .env.example .env
 ```
 
-`.env` dosyasinin icerigini kontrol edin:
+Review your `.env` file configuration:
 ```env
 PORT=3000
 NODE_ENV=development
-JWT_SECRET=ornek_gelistirme_jwt_anahtari_2026
-SESSION_SECRET=ornek_gelistirme_session_anahtari_2026
+JWT_SECRET=local_development_jwt_secret_key_2026
+SESSION_SECRET=local_development_session_secret_key_2026
 CORS_ORIGIN=http://localhost:3000,http://127.0.0.1:3000
 ```
 
-### 4. Sunucuyu Baslatin
+### 4. Start the Application
 ```bash
-# Gelistirme modunda (Dosya degisikliklerinde otomatik yeniden baslar)
+# Development mode (Hot-reload with node --watch)
 npm run dev
 
-# veya standart modda
+# Or standard execution
 npm start
 ```
 
-Tarayicinizdan erisin: `http://localhost:3000`
+Access the application in your browser: `http://localhost:3000`
 
 ---
 
-## Canliya Alma (Production Deployment) Rehberi
+## Production Deployment Guide
 
 > [!IMPORTANT]
-> Proje varsayilan haliyle yerel ortam (localhost) uzerinde calismaktadir. Bir sunucuya deploy etmeden once asagidaki mimari gereksinimleri ve yapilmasi gereken degisiklikleri uygulayiniz.
+> Animeria is configured by default for local development. Before hosting on public cloud providers or servers, review the architectural considerations and deployment steps detailed below.
 
 ---
 
-### Neden Mevcut Surum Yalnizca Localhost Icin Uygundur?
+### Why the Current Build is Optimized for Localhost
 
-1. **JSON Tabanli Flat-File Veritabani (`data/*.json`):**
-   - Kullanicilar, oturumlar, izleme listeleri ve yorumlar yerel diske JSON formatinda yazilir.
-   - Vercel, Netlify veya Render ucretsiz katmani gibi **serverless / ephemeral (gecici diskli)** ortamlarda, sunucu uykuya gectiginde veya her yeni deploy isleminde diske yazilan tum veriler silinir.
-   - Bu nedenle uygulamanin ya **kalici disk (Persistent Volume)** bagli bir VPS/Container uzerinde calistirilmasi ya da veritabaninin MongoDB/PostgreSQL gibi harici bir veritabanina baglanmasi gerekir.
+1. **Flat-File JSON Database (`data/*.json`):**
+   - User credentials, session tokens, watchlists, and comments are stored in local JSON files.
+   - On **ephemeral / serverless** platforms (such as Vercel, Netlify, or free-tier Render instances), the local filesystem is reset on every sleep cycle or redeploy, wiping stored user data.
+   - Production setups must use either a **Persistent Volume** or an external database adapter (e.g., PostgreSQL, MongoDB, Redis).
 
-2. **Video Akis Proxy'si (Stream & Segment Proxy):**
-   - `/api/proxy/stream` rotasi kaynak sitelerin CORS ve referer kisitlamalarini asmak icin video segmentlerini Node.js sunucusu uzerinden iletir.
-   - Serverless fonksiyonlarda mevcut olan 10-60 saniyelik zaman asimi (timeout) ve bant genisligi sinirlari nedeniyle, uygulamanin **kesintisiz calisan bir Node.js sunucusunda (VPS, Docker, Dedicated Server)** barindirilmasi zorunludur.
+2. **Long-Running Video Stream Proxying:**
+   - The `/api/proxy/stream` endpoint proxies live video segments through Node.js to bypass third-party CORS restrictions.
+   - Serverless functions impose strict execution timeouts (10-60 seconds) and bandwidth caps. Therefore, a **persistent Node.js runtime (VPS, Container, or Dedicated Server)** is mandatory.
 
-3. **HTTPS ve Cerez Guvenligi:**
-   - Canli modda (`NODE_ENV=production`) tarayicilarin HttpOnly ve Secure bayrakli cerezleri kabul etmesi icin alan adinizin gecerli bir SSL sertifikasina (HTTPS) sahip olmasi gerekir.
+3. **HTTPS & Cookie Requirements:**
+   - When running in production (`NODE_ENV=production`), HttpOnly cookies require `Secure=true` and `SameSite=Lax`. Browsers will reject these cookies unless your domain has an active SSL/TLS certificate (HTTPS).
 
-4. **Sistem Seviyesinde `curl` Bagimliligi:**
-   - Bazi anime kaynaklarina erisim saglanirken TLS engellerini asmak adina sistem uzerindeki `curl` kutuphanesi kullanilir. Sunucu ortaminda `curl` kurulu olmalidir (Dockerfile icerisinde bu adim hazir bulunmaktadir).
+4. **System-Level `curl` Dependency:**
+   - Certain anime scraper modules use system-level `curl` to resolve Cloudflare-protected endpoints. Ensure `curl` is present in your server environment (this is pre-configured in the included `Dockerfile`).
 
 ---
 
-### Canliya Almadan Once Yapilmasi Gereken Guncellemeler
+### Required Changes Before Production Deployment
 
-#### 1. Uretim Ortam Degiskenlerini Tanimlayin
-Canli sunucunuzda `.env` dosyasina guclu kriptografik anahtarlar ve alan adinizi ekleyin:
+#### 1. Set Production Environment Variables
+On your server or container dashboard, define strong cryptographic secrets and specify your production domain:
 ```env
 NODE_ENV=production
 PORT=3000
-JWT_SECRET=kriptografik_olarak_guclu_en_az_64_karakterli_jwt_secret
-SESSION_SECRET=kriptografik_olarak_guclu_en_az_64_karakterli_session_secret
-CORS_ORIGIN=https://animeria.siteniz.com
+JWT_SECRET=use_a_cryptographically_secure_random_string_min_64_chars
+SESSION_SECRET=use_a_cryptographically_secure_random_string_min_64_chars
+CORS_ORIGIN=https://animeria.yourdomain.com
 ```
 
-Rastgele guclu anahtar uretmek icin su komutu calistirabilirsiniz:
+You can generate cryptographically secure keys with Node.js:
 ```bash
 node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
 ```
 
-#### 2. Kalici Disk veya Veritabani Entegrasyonu
-- **JSON Veritabani Kullanilacaksa:** Docker uzerinde `data/` dizinini kalici bir volume olarak baglayin (`-v animeria_data:/app/data`).
-- **Olceklenebilir Yapi Icin:** `backend/db.js` dosyasindaki okuma/yazma fonksiyonlarini PostgreSQL (Prisma/Drizzle) veya MongoDB baglantisina yonlendirin.
+#### 2. Persistent Storage or Database Adapter
+- **If continuing with JSON Flat-File storage:** Attach a persistent volume to the `/app/data` directory inside Docker or your VPS.
+- **For distributed/scalable setups:** Update `backend/db.js` to query an external PostgreSQL (via Prisma/Drizzle) or MongoDB instance.
 
-#### 3. Reverse Proxy ve SSL Yapilandirmasi
-- Sunucu onune Nginx, Caddy veya Cloudflare ekleyin.
-- `server.js` dosyasinda `app.set("trust proxy", 1);` aktif durumdadir; ters vekil sunucunuzun `X-Forwarded-For` ve `X-Forwarded-Proto` basliklarini ilettiginden emin olun.
+#### 3. Reverse Proxy & SSL Configuration
+- Deploy behind Nginx, Caddy, or Cloudflare.
+- The server enables `app.set("trust proxy", 1);` by default. Verify that your reverse proxy forwards `X-Forwarded-For` and `X-Forwarded-Proto` headers.
 
 ---
 
-### Adim Adim Dagitim Secenekleri
+### Step-by-Step Deployment Options
 
-#### Secenek 1: Docker ve Docker Compose ile Dagitim (Onerilen)
+#### Option 1: Docker & Docker Compose Deployment (Recommended)
 
-Proje icerisinde optimize edilmis bir [Dockerfile](Dockerfile) (`node:20-slim` + `curl`) bulunmaktadir.
+The repository includes an optimized [Dockerfile](Dockerfile) (`node:20-slim` + `curl`).
 
-1. Sunucunuzda `docker-compose.yml` dosyasi olusturun:
+1. Create a `docker-compose.yml` file on your server:
 ```yaml
 version: '3.8'
 
@@ -213,9 +213,9 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - JWT_SECRET=uretim_icin_guclu_jwt_secret_anahtari
-      - SESSION_SECRET=uretim_icin_guclu_session_secret_anahtari
-      - CORS_ORIGIN=https://animeria.siteniz.com
+      - JWT_SECRET=your_production_jwt_secret_key
+      - SESSION_SECRET=your_production_session_secret_key
+      - CORS_ORIGIN=https://animeria.yourdomain.com
     volumes:
       - animeria_data:/app/data
 
@@ -223,16 +223,16 @@ volumes:
   animeria_data:
 ```
 
-2. Konteyneri derleyip calistirin:
+2. Build and launch the container:
 ```bash
 docker compose up -d --build
 ```
 
 ---
 
-#### Secenek 2: Ubuntu/Debian VPS Uzerinde PM2 ve Nginx ile Dagitim
+#### Option 2: Linux VPS (Ubuntu/Debian) with PM2 & Nginx
 
-1. **Gerekli Paketleri Kurun:**
+1. **Install Server Packages:**
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl git nginx
@@ -241,27 +241,27 @@ sudo apt install -y nodejs
 sudo npm install -g pm2
 ```
 
-2. **Projeyi Klonlayin:**
+2. **Clone & Setup Project:**
 ```bash
 cd /var/www
 sudo git clone https://github.com/fadimrak/animeria.git
 cd animeria
 sudo npm ci --omit=dev
 sudo cp .env.example .env
-sudo nano .env # Uretim degerlerini girin
+sudo nano .env # Enter production values
 ```
 
-3. **PM2 ile Servisi Baslatin:**
+3. **Start Process with PM2:**
 ```bash
 pm2 start server.js --name "animeria"
 pm2 save
 pm2 startup
 ```
 
-4. **Nginx Yapilandirmasi (`/etc/nginx/sites-available/animeria`):**
+4. **Configure Nginx Reverse Proxy (`/etc/nginx/sites-available/animeria`):**
 ```nginx
 server {
-    server_name animeria.siteniz.com;
+    server_name animeria.yourdomain.com;
 
     location / {
         proxy_pass http://127.0.0.1:3000;
@@ -277,50 +277,50 @@ server {
 }
 ```
 
-5. **Nginx'i Etkinlestirin ve SSL Sertifikasi Alin:**
+5. **Enable Site & Provision Let's Encrypt SSL:**
 ```bash
 sudo ln -s /etc/nginx/sites-available/animeria /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d animeria.siteniz.com
+sudo certbot --nginx -d animeria.yourdomain.com
 ```
 
 ---
 
-#### Secenek 3: PaaS Platformlari (Railway, Render, Coolify, CapRover)
+#### Option 3: PaaS Providers (Railway, Render, Coolify, CapRover)
 
-- **Railway:** GitHub reposunu baglayin. Settings > Disks bolumunden `/app/data` dizinine **Persistent Volume** ekleyin. Ortam degiskenlerini panelden tanimlayin.
-- **Render:** Web Service olusturun (Docker ortamini secin). Disks sekmesinden `/app/data` dizinini kalici disk olarak tanimlayin.
-- **Coolify / CapRover:** Kendi VPS sunucunuzda Docker Compose dosyasini kullanarak tek tikla dagitim yapin.
+- **Railway:** Connect the GitHub repository. In Settings > Disks, mount a **Persistent Volume** pointing to `/app/data`. Configure environment variables in the dashboard.
+- **Render:** Deploy as a **Web Service** with Docker Environment. Add a Persistent Disk attached to `/app/data`.
+- **Coolify / CapRover:** Deploy using Docker Compose directly onto your self-hosted server instance.
 
 ---
 
-## Ortam Degiskenleri (.env Referansi)
+## Environment Variables (.env Reference)
 
-| Degisken Adi | Varsayilan | Zorunlu mu? | Aciklama |
+| Variable | Default | Required in Prod | Description |
 |---|---|---|---|
-| `PORT` | `3000` | Hayir | Sunucunun dinleyecegi port. |
-| `NODE_ENV` | `development` | Evet (Canlida) | Calisma modu (`development` veya `production`). |
-| `JWT_SECRET` | *(Otomatik uretilir)* | Evet (Canlida) | JWT erisim token'larini imzalamak icin kullanilan gizli anahtar. |
-| `SESSION_SECRET` | *(Otomatik uretilir)* | Evet (Canlida) | Oturum ve cerez guvenligi icin kullanilan gizli anahtar. |
-| `CORS_ORIGIN` | `""` *(Localhost izinli)* | Evet (Canlida) | Izin verilen domain adresleri (Virgulle ayrilmis liste). |
+| `PORT` | `3000` | No | Network port the Express server listens on. |
+| `NODE_ENV` | `development` | Yes | Runtime environment (`development` or `production`). |
+| `JWT_SECRET` | *(Auto-generated)* | Yes | Cryptographic secret used for signing JWT access tokens. |
+| `SESSION_SECRET` | *(Auto-generated)* | Yes | Secret key used for signing session IDs and cookies. |
+| `CORS_ORIGIN` | `""` *(Localhost permitted)* | Yes | Comma-separated list of allowed origins (e.g. `https://animeria.yourdomain.com`). |
 
 ---
 
-## Guvenlik Mimarisi
+## Security Architecture
 
-- **SSRF Korumasi (`ssrfGuard.js`):** Proxy isteklerinde `127.0.0.1`, `localhost`, RFC1918 ozel IP araliklari ve bulut metadata (AWS/GCP `169.254.169.254`) adreslerine erisim engellenir.
-- **Brute-Force ve Hesap Kilitleme:** 5 ardisik hatali parola girisiminde kullanici hesabi 15 dakika boyunca kilitlenir.
-- **Kriptografik Parola Guvenligi:** Node.js yerel `crypto.scryptSync` (64-byte key + 32-byte salt) ve zamanlama saldirilarina karsi `crypto.timingSafeEqual` kullanilir.
-- **Iki Adimli Dogrulama (2FA):** Speakeasy ile RFC6238 TOTP standardi, QR Kod entegrasyonu ve yedek kurtarma kodlari.
-- **Girdi Dogrulama ve Sanitizasyon:** Zod giris semalari ile veri dogrulama, XSS ve NoSQL/Prototype Pollution temizligi (`sanitize-html`).
-- **Kademeli Hiz Sinirlandirma (Rate Limiting):** API, Auth, Yorum ve Proxy rotalari icin ayri ayri yapilandirilmis IP tabanli istek limitleri.
-- **Guvenlik Basliklari:** Helmet ile Content Security Policy (CSP), HSTS, X-Frame-Options (Clickjacking onleme) ve X-Content-Type-Options: nosniff basliklari.
+- **SSRF Guard (`ssrfGuard.js`):** Blocks internal network probing (`127.0.0.1`, `localhost`, RFC1918 private subnets, and cloud metadata endpoints such as AWS/GCP `169.254.169.254`).
+- **Account Lockout & Brute-Force Defense:** Automatically locks user accounts for 15 minutes after 5 consecutive failed login attempts.
+- **Cryptographic Password Hashing:** Uses Node.js native `crypto.scryptSync` (64-byte key + 32-byte dynamic salt) and constant-time string verification (`crypto.timingSafeEqual`).
+- **Two-Factor Authentication (2FA):** RFC6238 TOTP implementation via Speakeasy, complete with QR code setup and emergency backup recovery codes.
+- **Strict Input Validation & Sanitization:** Zod schema validation across all write endpoints with XSS and prototype pollution filtering via `sanitize-html`.
+- **Multi-Tier Rate Limiting:** Distinct rate limit thresholds for General API, Authentication, User Comments, and Streaming Proxy endpoints.
+- **HTTP Security Headers:** Helmet-configured Content Security Policy (CSP), HSTS, X-Frame-Options (Clickjacking defense), and X-Content-Type-Options: nosniff.
 
 ---
 
-## Lisans ve DMCA Bildirimi
+## License and DMCA Notice
 
-- **Lisans:** Bu proje MIT Lisansi ile lisanslanmistir. Detaylar icin [LICENSE](LICENSE) dosyasina bakabilirsiniz.
-- **DMCA ve Telif Hakki:** Animeria sunucularinda hicbir video veya medya dosyasi barindirilmaz. Tum icerikler ucuncu taraf herkese acik saglayicilar uzerinden derlenmektedir. Telif hakki bildirimleri ve iletisim icin `/dmca.html` sayfasini inceleyebilirsiniz.
+- **License:** Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+- **DMCA & Copyright Disclaimer:** Animeria does not host, store, or upload media files on its servers. All video streams and metadata are aggregated from publicly available third-party sources. For copyright inquiries and takedown notices, consult `/dmca.html`.
