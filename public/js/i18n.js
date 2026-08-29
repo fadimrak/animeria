@@ -61,7 +61,7 @@ const I18N_DICT = {
     watch_order_current: "ŞU AN İZLENİYOR",
     watch_order_next: "SIRADA",
     watch_order_watched: "İZLENDİ",
-    footer_desc: "Reklamsız ve tamamen ücretsiz anime izleme platformu. İletişim: <a href=\"https://fadimrak.xyz\" target=\"_blank\" style=\"color: #ffffff; text-decoration: underline;\">fadimrak.xyz</a>",
+    footer_desc: "Reklamsız ve tamamen ücretsiz anime izleme platformu.",
 
     // Auth Strings
     auth_title: "Giriş Yap & Kayıt Ol",
@@ -240,7 +240,7 @@ const I18N_DICT = {
     watch_order_current: "CURRENTLY WATCHING",
     watch_order_next: "NEXT",
     watch_order_watched: "COMPLETED",
-    footer_desc: "Ad-free and completely free anime streaming platform. Contact: <a href=\"https://fadimrak.xyz\" target=\"_blank\" style=\"color: #ffffff; text-decoration: underline;\">fadimrak.xyz</a>",
+    footer_desc: "Ad-free and completely free anime streaming platform.",
 
     // Auth Strings
     auth_title: "Sign In & Register",
