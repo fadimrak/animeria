@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgCenterGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#121218"/>
+      <stop offset="60%" stop-color="#09090c"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </radialGradient>
+
+    <!-- Topographic Contour Line Glow Filter -->
+    <filter id="isoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="lineGradHigh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#d4d4d8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a1a1aa" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <linearGradient id="lineGradMid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a1a1aa" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#71717a" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Obsidian Background Base -->
+  <rect width="1920" height="1080" fill="url(#bgCenterGlow)"/>
+
+  <!-- Topographic Contour Loops matching reference photo -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Top-Left & Center-Left Peak 1 -->
+    <path d="M-100,200 C150,180 320,80 500,60 C680,40 850,140 920,280 C990,420 860,600 680,680 C500,760 220,740 60,620 C-100,500 -150,300 -100,200 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M-50,220 C180,200 340,110 490,95 C640,80 790,160 850,280 C910,400 800,550 640,620 C480,690 240,670 100,570 C-40,470 -80,310 -50,220 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M0,240 C200,220 350,140 480,130 C610,120 730,190 780,290 C830,390 730,510 600,570 C470,630 260,610 140,520 C20,430 -10,320 0,240 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M60,260 C230,245 360,180 470,170 C580,160 670,220 710,300 C750,380 670,470 560,515 C450,560 280,545 180,470 C80,395 40,325 60,260 Z" stroke="url(#lineGradHigh)" stroke-width="1.6" filter="url(#isoGlow)"/>
+    <path d="M120,280 C260,270 370,220 455,210 C540,200 610,245 640,310 C670,375 600,430 515,465 C430,500 300,485 220,425 C140,365 100,315 120,280 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M180,300 C290,290 380,255 440,250 C500,245 550,275 570,320 C590,365 540,400 475,420 C410,440 315,430 260,385 C205,340 160,315 180,300 Z" stroke="url(#lineGradHigh)" stroke-width="1.8" filter="url(#isoGlow)"/>
+    <path d="M250,325 C325,315 390,290 430,285 C470,280 495,300 505,330 C515,360 480,380 435,390 C390,400 330,390 295,360 C260,330 235,330 250,325 Z" stroke="url(#lineGradHigh)" stroke-width="2.2" filter="url(#isoGlow)"/>
+    <ellipse cx="380" cy="340" rx="45" ry="30" stroke="#ffffff" stroke-width="2.4" filter="url(#isoGlow)"/>
+    <ellipse cx="380" cy="340" rx="18" ry="12" stroke="#ffffff" stroke-width="2.6" filter="url(#isoGlow)"/>
+
+    <!-- Top-Right Peak 2 -->
+    <path d="M1100,-50 C1250,-60 1480,40 1620,130 C1760,220 1880,380 1850,530 C1820,680 1660,780 1500,790 C1340,800 1180,720 1080,600 C980,480 950,310 980,170 C1010,30 1040,-40 1100,-50 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M1150,0 C1280,-10 1460,70 1570,150 C1680,230 1780,360 1760,490 C1740,620 1600,700 1460,710 C1320,720 1190,640 1110,540 C1030,440 1010,290 1040,170 C1070,50 1100,10 1150,0 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M1200,50 C1310,40 1440,110 1530,180 C1620,250 1690,350 1670,450 C1650,550 1530,620 1420,630 C1310,640 1200,570 1140,485 C1080,400 1070,270 1095,170 C1120,70 1150,60 1200,50 Z" stroke="url(#lineGradHigh)" stroke-width="1.6" filter="url(#isoGlow)"/>
+    <path d="M1260,110 C1345,100 1440,155 1500,210 C1560,265 1610,340 1595,415 C1580,490 1485,540 1395,550 C1305,560 1220,505 1175,435 C1130,365 1130,260 1155,185 C1180,110 1220,120 1260,110 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M1320,170 C1385,160 1450,200 1490,245 C1530,290 1560,350 1545,405 C1530,460 1450,495 1375,500 C1300,505 1240,460 1210,405 C1180,350 1190,270 1220,215 C1250,160 1285,180 1320,170 Z" stroke="url(#lineGradHigh)" stroke-width="1.8" filter="url(#isoGlow)"/>
+    <ellipse cx="1380" cy="335" rx="80" ry="60" stroke="url(#lineGradHigh)" stroke-width="2.2" filter="url(#isoGlow)"/>
+    <ellipse cx="1380" cy="335" rx="42" ry="32" stroke="#ffffff" stroke-width="2.6" filter="url(#isoGlow)"/>
+    <ellipse cx="1380" cy="335" rx="16" ry="12" stroke="#ffffff" stroke-width="2.8" filter="url(#isoGlow)"/>
+
+    <!-- Bottom Center & Bottom-Right Peak 3 -->
+    <path d="M800,650 C950,580 1160,600 1320,680 C1480,760 1600,920 1580,1080 C1560,1240 1380,1320 1200,1330 C1020,1340 850,1250 740,1130 C630,1010 650,820 700,730 C750,640 760,660 800,650 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M860,700 C980,640 1150,655 1280,720 C1410,785 1510,910 1495,1030 C1480,1150 1330,1215 1190,1220 C1050,1225 915,1155 830,1060 C745,965 765,815 805,745 C845,675 830,710 860,700 Z" stroke="url(#lineGradHigh)" stroke-width="1.6" filter="url(#isoGlow)"/>
+    <path d="M930,750 C1020,705 1145,715 1240,765 C1335,815 1410,905 1400,995 C1390,1085 1270,1130 1165,1135 C1060,1140 960,1085 895,1010 C830,935 850,815 885,765 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <path d="M1010,805 C1075,770 1165,775 1230,815 C1295,855 1345,920 1335,985 C1325,1050 1230,1080 1150,1085 C1070,1090 995,1050 950,990 C905,930 920,845 955,810 Z" stroke="url(#lineGradHigh)" stroke-width="2.0" filter="url(#isoGlow)"/>
+    <ellipse cx="1140" cy="940" rx="95" ry="68" stroke="url(#lineGradHigh)" stroke-width="2.2" filter="url(#isoGlow)"/>
+    <ellipse cx="1140" cy="940" rx="55" ry="38" stroke="#ffffff" stroke-width="2.6" filter="url(#isoGlow)"/>
+    <ellipse cx="1140" cy="940" rx="20" ry="14" stroke="#ffffff" stroke-width="2.8" filter="url(#isoGlow)"/>
+
+    <!-- Bottom-Left Deep Contour Saddle -->
+    <path d="M220,680 C360,650 490,720 540,840 C590,960 520,1100 400,1160 C280,1220 110,1180 30,1080 C-50,980 -40,820 40,740 C120,660 180,690 220,680 Z" stroke="url(#lineGradHigh)" stroke-width="1.8" filter="url(#isoGlow)"/>
+    <path d="M260,730 C355,710 440,755 475,840 C510,925 460,1025 380,1065 C300,1105 180,1080 120,1010 C60,940 70,830 130,770 C190,710 225,740 260,730 Z" stroke="url(#lineGradMid)" stroke-width="1.2"/>
+    <ellipse cx="300" cy="890" rx="65" ry="50" stroke="#ffffff" stroke-width="2.4" filter="url(#isoGlow)"/>
+    <ellipse cx="300" cy="890" rx="24" ry="18" stroke="#ffffff" stroke-width="2.6" filter="url(#isoGlow)"/>
+
+    <!-- Connecting Saddle Isolines Across Field -->
+    <path d="M-200,50 C400,120 800,20 1200,80 C1600,140 1900,40 2100,-30" stroke="url(#lineGradMid)" stroke-width="1.0"/>
+    <path d="M-200,900 C300,820 700,950 1100,880 C1500,810 1800,940 2100,870" stroke="url(#lineGradMid)" stroke-width="1.0"/>
+    <path d="M600,380 C750,450 850,550 980,620 C1110,690 1240,640 1400,580" stroke="url(#lineGradMid)" stroke-width="1.0"/>
+    <path d="M540,420 C680,490 790,590 920,660 C1050,730 1180,690 1340,630" stroke="url(#lineGradHigh)" stroke-width="1.4" filter="url(#isoGlow)"/>
+  </g>
+</svg>

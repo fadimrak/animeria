@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profilim & İzleme İstatistikleri — ANIMERIA</title>
+  <meta name="description" content="Animeria anime izleme istatistikleri, saat hesabı, anime listesi ve MAL/AniList entegrasyonu."/>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800;900&display=swap" rel="stylesheet"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/theme.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/player.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo-wrap">
+        <img src="assets/logo.png" alt="ANIMERIA" class="brand-svg-logo"/>
+        <span style="font-family: var(--font-display); font-weight: 900; font-size: 1.35rem; letter-spacing: 0.08em; color: #ffffff;">ANIMERIA</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link" data-i18n="nav_home">Ana Sayfa</a></li>
+          <li><a href="/trending" class="nav-link" data-i18n="nav_trending">Trendler</a></li>
+          <li><a href="/top" class="nav-link" data-i18n="nav_top">En İyiler</a></li>
+          <li><a href="/browse" class="nav-link" data-i18n="nav_browse">Keşfet</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger-btn" id="searchTriggerBtn" title="Hızlı Arama (Ctrl + K)">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <span data-i18n="nav_search">Anime Ara...</span>
+          <span class="kbd-badge">Ctrl K</span>
+        </button>
+
+        <button class="btn-icon" id="navBookmarksBtn" title="Listem">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+
+        <button class="btn-icon" id="navHistoryBtn" title="İzleme Geçmişi">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </button>
+
+        <button class="btn-icon" id="langToggleBtn" title="Dil Seçimi / Change Language" style="width: auto; padding: 0 0.85rem; font-size: 0.8rem; font-family: var(--font-mono); gap: 0.35rem;">
+          <span style="font-weight: 800;">TR</span> <span style="opacity: 0.4;">/ EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Profile Container -->
+  <main class="container" style="padding-top: calc(var(--nav-height) + 1.5rem); min-height: 85vh;">
+
+    <!-- 1. Profile Hero Card -->
+    <section class="profile-hero" id="profileHeroSection">
+      <!-- Clickable Banner Wrap -->
+      <div class="profile-banner-wrap interactive-image-target" id="profileBannerWrap" title="Banneri Değiştir">
+        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1200&q=80" alt="Profile Banner" class="profile-banner-img" id="profileBannerImg"/>
+        <div class="profile-banner-overlay"></div>
+        <div class="image-change-hover-overlay">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span data-i18n="hover_change_banner">Bannerı Değiştir (Tıkla)</span>
+        </div>
+      </div>
+
+      <div class="profile-header-content">
+        <div class="profile-user-summary">
+          <!-- Clickable Avatar Wrap -->
+          <div class="profile-avatar-container interactive-image-target" id="profileAvatarWrap" title="Avatarı Değiştir">
+            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=animeria" alt="Avatar" class="profile-avatar-large" id="profileAvatarImg"/>
+            <div class="avatar-change-hover-badge">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+          </div>
+
+          <div class="profile-info-block">
+            <h1 class="profile-display-name" id="profileUsername" data-i18n="profile_guest_title">Misafir Kullanıcı</h1>
+            <p class="profile-bio" id="profileBio" data-i18n="profile_guest_bio">Anime yolculuğunu takip et ve listeni senkronize et.</p>
+            <div class="profile-social-badges" id="profileBadges">
+              <!-- Linked Badges injected here -->
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-hero-actions">
+          <button class="btn btn-secondary" id="openEditProfileModalBtn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span data-i18n="profile_edit_btn">Profili Düzenle</span>
+          </button>
+          <button class="btn btn-primary" id="openImportHubBtn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="profile_import_btn">MAL / AniList İçe Aktar</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Statistics Grid -->
+    <section class="stats-cards-grid" id="profileStatsGrid">
+      <!-- 1. Anime Sayısı -->
+      <div class="stat-metric-card">
+        <div class="stat-card-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+        </div>
+        <div class="stat-card-data">
+          <span class="stat-card-value" id="statTotalAnime">0</span>
+          <span class="stat-card-label" data-i18n="stat_total_anime">İzlenen Anime</span>
+        </div>
+      </div>
+
+      <!-- 2. Toplam İzleme Süresi (Saat) -->
+      <div class="stat-metric-card">
+        <div class="stat-card-icon" style="background: rgba(255, 255, 255, 0.12); color: #ffffff;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="stat-card-data">
+          <span class="stat-card-value" id="statTotalHours">0 <span style="font-size: 1rem; font-weight: 600; color: var(--text-muted);" data-i18n="stat_total_hours">Saat</span></span>
+          <span class="stat-card-label" id="statTotalDaysLabel">~0 Gün Toplam İzleme</span>
+        </div>
+      </div>
+
+      <!-- 3. Toplam Bölüm -->
+      <div class="stat-metric-card">
+        <div class="stat-card-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="stat-card-data">
+          <span class="stat-card-value" id="statTotalEpisodes">0</span>
+          <span class="stat-card-label" data-i18n="stat_total_episodes">Toplam Bölüm</span>
+        </div>
+      </div>
+
+      <!-- 4. Ortalama Puan -->
+      <div class="stat-metric-card">
+        <div class="stat-card-icon" style="color: #ffd700;">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="stat-card-data">
+          <span class="stat-card-value" id="statAverageScore">—</span>
+          <span class="stat-card-label" data-i18n="stat_average_score">Ortalama Puan</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Status Breakdown & Favorite Genres -->
+    <section class="analytics-deck-grid">
+      <!-- Status Breakdown -->
+      <div class="analytics-card">
+        <h3 class="analytics-card-title">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+          <span data-i18n="analytics_breakdown_title">İzleme Durumu Dağılımı</span>
+        </h3>
+        <div class="breakdown-list" id="statusBreakdownList">
+          <!-- Populated by profile.js -->
+        </div>
+      </div>
+
+      <!-- Favorite Genres -->
+      <div class="analytics-card">
+        <h3 class="analytics-card-title">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          <span data-i18n="analytics_genres_title">En Çok İzlenen Türler</span>
+        </h3>
+        <div class="genre-tag-cloud" id="genreTagCloud">
+          <!-- Populated by profile.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Watchlist Management Tabs & Catalog -->
+    <section class="section" id="watchlistSection">
+      <div class="profile-tabs-header">
+        <div class="profile-nav-tabs">
+          <button class="profile-tab-btn active" data-filter="ALL"><span data-i18n="status_all">Tümü</span> (<span id="countAll">0</span>)</button>
+          <button class="profile-tab-btn" data-filter="WATCHING"><span data-i18n="status_watching">İzleniyor</span> (<span id="countWatching">0</span>)</button>
+          <button class="profile-tab-btn" data-filter="COMPLETED"><span data-i18n="status_completed">Tamamlandı</span> (<span id="countCompleted">0</span>)</button>
+          <button class="profile-tab-btn" data-filter="PLANNING"><span data-i18n="status_planning">Planlananlar</span> (<span id="countPlanning">0</span>)</button>
+          <button class="profile-tab-btn" data-filter="DROPPED"><span data-i18n="status_dropped">Bırakıldı</span> (<span id="countDropped">0</span>)</button>
+        </div>
+
+        <div class="watchlist-controls">
+          <input type="text" class="form-input" id="watchlistSearchInput" placeholder="Listemde ara..." data-i18n-placeholder="watchlist_search_placeholder" style="width: 220px; padding: 0.45rem 0.85rem; font-size: 0.82rem;"/>
+        </div>
+      </div>
+
+      <!-- Watchlist Grid -->
+      <div class="watchlist-grid" id="profileWatchlistGrid">
+        <div class="spinner" style="grid-column: 1/-1; margin: 3rem auto;"></div>
+      </div>
+    </section>
+
+    <!-- 5. Import Hub Deck -->
+    <section class="section" id="importHubSection">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag" data-i18n="import_hub_tag">Entegrasyon & Senkronizasyon</span>
+          <h2 class="section-title" data-i18n="import_hub_title">İzleme Listelerini İçe Aktar</h2>
+        </div>
+      </div>
+
+      <div class="import-hub-grid">
+        <!-- AniList Import Card -->
+        <div class="import-action-card">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="social-badge anilist-badge" style="width: 42px; height: 42px; margin-bottom: 0;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.361 2.843h-2.722v18.314h2.722v-18.314zm8.639 0h-3.417l-5.583 18.314h3.417l1.361-4.722h6.444l1.361 4.722h3.417l-5.583-18.314zm-.805 10.778h-4.361l2.181-7.556 2.18 7.556z"/></svg>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #ffffff;" data-i18n="import_anilist_title">AniList'ten İçe Aktar</h3>
+              <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="import_anilist_desc">Tamamlanan, izlenen ve planlanan tüm listelerini 1 tıkla çek.</p>
+            </div>
+          </div>
+
+          <form id="aniListImportForm" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div class="form-group">
+              <label class="form-label">AniList</label>
+              <input type="text" class="form-input" id="importAniListUsername" placeholder="örn: animekaşifi" data-i18n-placeholder="import_anilist_placeholder"/>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnRunAniListImport">
+              <span data-i18n="import_anilist_btn">Listeyi Senkronize Et & İçe Aktar</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- MyAnimeList Import Card -->
+        <div class="import-action-card">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="social-badge mal-badge" style="width: 42px; height: 42px; margin-bottom: 0;">
+              <span style="font-family: var(--font-display); font-weight: 900; font-size: 1rem; color: #2e51a2;">MAL</span>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #ffffff;" data-i18n="import_mal_title">MyAnimeList'ten İçe Aktar</h3>
+              <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="import_mal_desc">MAL anime puanlarını, bölüm sayılarını ve saatlerini aktar.</p>
+            </div>
+          </div>
+
+          <form id="malImportForm" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div class="form-group">
+              <label class="form-label">MyAnimeList</label>
+              <input type="text" class="form-input" id="importMALUsername" placeholder="örn: animefan" data-i18n-placeholder="import_mal_placeholder"/>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnRunMALImport">
+              <span data-i18n="import_mal_btn">MyAnimeList'ten İçe Aktar</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Quick Image Changer Modal (Avatar & Banner Direct Click) -->
+  <div class="modal-overlay" id="quickImageModalOverlay">
+    <div class="auth-modal" style="max-width: 520px;">
+      <div class="auth-header">
+        <h3 class="auth-title" id="quickImageModalTitle" data-i18n="img_modal_title">Görseli Güncelle</h3>
+        <button class="btn-icon auth-close-btn" id="closeQuickImageModalBtn">✕</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="auth-tabs" style="margin-bottom: 1.25rem;">
+        <button class="auth-tab-btn active" id="imgTabPresetsBtn" data-i18n="img_tab_presets">Hazır Seçenekler</button>
+        <button class="auth-tab-btn" id="imgTabUrlBtn" data-i18n="img_tab_url">Görsel URL</button>
+        <button class="auth-tab-btn" id="imgTabUploadBtn" data-i18n="img_tab_upload">Dosya Yükle</button>
+      </div>
+
+      <!-- Tab 1: Presets Gallery -->
+      <div class="img-tab-panel active" id="imgPanelPresets">
+        <div class="preset-gallery-grid" id="presetGalleryGrid">
+          <!-- Preset thumbnails injected dynamically -->
+        </div>
+      </div>
+
+      <!-- Tab 2: URL Input -->
+      <div class="img-tab-panel" id="imgPanelUrl" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" data-i18n="img_tab_url">Görsel URL</label>
+          <input type="url" class="form-input" id="quickImageUrlInput" placeholder="https://... doğrudan görsel linki" data-i18n-placeholder="img_url_placeholder"/>
+        </div>
+        <div class="image-live-preview-box" id="quickImagePreviewBox">
+          <img src="" alt="Preview" id="quickImagePreviewImg" style="display: none; width: 100%; height: 140px; object-fit: cover; border-radius: var(--radius-sm);"/>
+        </div>
+      </div>
+
+      <!-- Tab 3: Local File Upload -->
+      <div class="img-tab-panel" id="imgPanelUpload" style="display: none;">
+        <div class="upload-dropzone" id="quickImageDropzone">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p data-i18n="img_upload_label">Cihazınızdan bir resim seçin (PNG, JPG, WebP)</p>
+          <input type="file" id="quickImageFileInput" accept="image/*" style="display: none;"/>
+          <button type="button" class="btn btn-secondary btn-sm" id="btnBrowseFile">Dosya Seç</button>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem;">
+        <button type="button" class="btn btn-primary" id="btnSaveQuickImage" style="flex: 1; justify-content: center;">
+          <span data-i18n="img_save_btn">Görseli Kaydet</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Profile Modal Overlay -->
+  <div class="modal-overlay" id="editProfileModalOverlay">
+    <div class="auth-modal" style="max-width: 480px;">
+      <div class="auth-header">
+        <h3 class="auth-title" data-i18n="profile_edit_btn">Profili Düzenle</h3>
+        <button class="btn-icon auth-close-btn" id="closeEditProfileModalBtn">✕</button>
+      </div>
+
+      <form id="editProfileForm" class="auth-form">
+        <div class="form-group">
+          <label class="form-label" data-i18n="auth_username_label">Kullanıcı Adı</label>
+          <input type="text" class="form-input" id="editUsername" required/>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Bio / Hakkımda</label>
+          <textarea class="form-input" id="editBio" rows="3" style="resize: vertical;"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Avatar URL</label>
+          <input type="url" class="form-input" id="editAvatar" placeholder="https://..."/>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Banner URL</label>
+          <input type="url" class="form-input" id="editBanner" placeholder="https://..."/>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">AniList</label>
+          <input type="text" class="form-input" id="editAnilistUsername" placeholder="AniList username"/>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">MyAnimeList</label>
+          <input type="text" class="form-input" id="editMalUsername" placeholder="MAL username"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-submit-btn" id="saveProfileBtn">
+          <span>Değişiklikleri Kaydet</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared Modals & Drawers -->
+  <div class="modal-overlay" id="detailsModalOverlay">
+    <div class="details-modal" id="detailsModalContent"></div>
+  </div>
+
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="search-modal">
+      <div class="search-input-header">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input-box" id="searchInputBox" placeholder="Anime adı yazın..." autocomplete="off"/>
+        <button class="btn-icon" id="closeSearchModalBtn">✕</button>
+      </div>
+      <div class="search-results-list" id="searchResultsList"></div>
+    </div>
+  </div>
+
+  <div class="drawer" id="bookmarksDrawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title" data-i18n="drawer_bookmarks_title">İzleme Listem</h3>
+      <button class="btn-icon" id="closeBookmarksDrawerBtn">✕</button>
+    </div>
+    <div class="drawer-body" id="bookmarksDrawerBody"></div>
+  </div>
+
+  <div class="drawer" id="historyDrawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title" data-i18n="drawer_history_title">İzleme Geçmişi</h3>
+      <button class="btn-icon" id="closeHistoryDrawerBtn">✕</button>
+    </div>
+    <div class="drawer-body" id="historyDrawerBody"></div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Liquid Glass Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 ANIMERIA. Reklamsız ve tamamen ücretsiz anime platformu.</span>
+        <span style="display: flex; gap: 1.25rem; align-items: center;">
+          <a href="https://fadimrak.xyz" target="_blank" style="color: var(--text-muted); text-decoration: underline;">İletişim: fadimrak.xyz</a>
+          <a href="/dmca" style="color: var(--text-muted);">DMCA & Telif Hakkı</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/topography.js"></script>
+</body>
+</html>

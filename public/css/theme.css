@@ -1,0 +1,279 @@
+/* ==========================================================================
+   ANIMERIA — MODERN LIQUID GLASS DESIGN SYSTEM & THEME
+   Strict Monochrome Aesthetics: Black, White, Metallic Silvers & Glass
+   ========================================================================== */
+
+:root {
+  /* Core Base Colors */
+  --bg-deep: #08080a;
+  --bg-surface: rgba(14, 14, 18, 0.72);
+  --bg-glass-card: rgba(18, 18, 24, 0.58);
+  --bg-glass-elevated: rgba(26, 26, 34, 0.78);
+  --bg-glass-pill: rgba(255, 255, 255, 0.08);
+  --bg-glass-pill-hover: rgba(255, 255, 255, 0.16);
+  --bg-dropdown: rgba(12, 12, 16, 0.95);
+
+  /* Borders & Specular Highlights */
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-hover: rgba(255, 255, 255, 0.28);
+  --glass-border-active: rgba(255, 255, 255, 0.9);
+  --glass-specular: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  --glass-specular-pill: inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
+
+  /* Typography Colors */
+  --text-pure: #ffffff;
+  --text-primary: #f4f4f5;
+  --text-medium: #a1a1aa;
+  --text-muted: #71717a;
+  --text-subtle: #52525b;
+
+  /* Tag Colors for Server & Subtitle Pills */
+  --tag-ssub-bg: rgba(99, 102, 241, 0.15);
+  --tag-ssub-text: #a5b4fc;
+  --tag-ssub-border: rgba(99, 102, 241, 0.3);
+
+  --tag-hsub-bg: rgba(245, 158, 11, 0.15);
+  --tag-hsub-text: #fcd34d;
+  --tag-hsub-border: rgba(245, 158, 11, 0.3);
+
+  --tag-dl-bg: rgba(16, 185, 129, 0.15);
+  --tag-dl-text: #6ee7b7;
+  --tag-dl-border: rgba(16, 185, 129, 0.3);
+
+  --tag-embed-bg: rgba(113, 113, 122, 0.2);
+  --tag-embed-text: #d4d4d8;
+  --tag-embed-border: rgba(113, 113, 122, 0.35);
+
+  /* Glassmorphism Blur & Shadows */
+  --glass-blur: blur(28px) saturate(190%);
+  --glass-blur-heavy: blur(40px) saturate(200%);
+  --glass-blur-nav: blur(32px) saturate(180%);
+
+  --shadow-liquid-sm: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-liquid-md: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.15);
+  --shadow-liquid-lg: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 1px rgba(255, 255, 255, 0.25);
+
+  /* Typography */
+  --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Layout */
+  --nav-height: 72px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Global Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-deep);
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+  background-color: var(--bg-deep);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Liquid Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Base Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Liquid Glass Card Surface */
+.liquid-glass-card {
+  background: var(--bg-glass-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-liquid-md), var(--glass-specular);
+  border-radius: var(--radius-md);
+}
+
+/* Liquid Glass Pill Button */
+.liquid-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  background: var(--bg-glass-pill);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: var(--glass-specular-pill), var(--shadow-liquid-sm);
+  transition: all var(--transition-fast);
+}
+
+.liquid-pill-btn:hover {
+  background: var(--bg-glass-pill-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--glass-specular-pill), 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Liquid Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), var(--glass-specular-pill);
+}
+
+.btn-primary:hover {
+  background: #f4f4f5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  color: #ffffff;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-specular-pill);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-glass-pill);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  color: #ffffff;
+  box-shadow: var(--glass-specular-pill);
+  transition: all var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: var(--bg-glass-pill-hover);
+  border-color: var(--glass-border-hover);
+  transform: scale(1.06);
+}
+
+/* Monochrome Tags */
+.mono-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.02em;
+}
+
+.mono-tag.solid {
+  background: #ffffff;
+  color: #000000;
+}
+
+.mono-tag.score {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mono-tag.outlined {
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--text-medium);
+  border: 1px solid var(--glass-border);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

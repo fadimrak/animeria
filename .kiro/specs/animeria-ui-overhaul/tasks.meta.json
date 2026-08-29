@@ -1,0 +1,735 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 `public/index.html` temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917374
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976930197
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977036417
+      }
+    ],
+    "1.2 `public/watch.html` temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917452
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976930918
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977036471
+      }
+    ],
+    "1.3 `public/browse.html`, `public/trending.html`, `public/top.html` temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917517
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976931786
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977036977
+      }
+    ],
+    "2.1 TR sözlüğü güncellemesi": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917581
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977041221
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977425328
+      }
+    ],
+    "2.2 EN sözlüğü emoji temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917644
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977041779
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977426016
+      }
+    ],
+    "2.3 `updateDomTexts()` langBtn güncelleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917707
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977042550
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977426794
+      }
+    ],
+    "3.1 `player.js` `renderAudioMenu()` başlık sadeleştirmesi": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917768
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977043310
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977427912
+      }
+    ],
+    "3.2 `player.js` toast mesajı sadeleştirmesi": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917827
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977044125
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977428743
+      }
+    ],
+    "3.3 `app.js` toast ve passive scroll güncellemesi": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917885
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977433256
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977476396
+      }
+    ],
+    "4. Kontrol noktası — Metin temizliği testleri": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917943
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979603568
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979845842
+      }
+    ],
+    "5.1 `public/css/theme.css` body background temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976917992
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977484073
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977829411
+      }
+    ],
+    "6.1 `TopographyBackground` class temel yapısı": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976918044
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977833740
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977900956
+      }
+    ],
+    "6.2 Particle sistemi ve rAF döngüsü": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976918100
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978213646
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978288260
+      }
+    ],
+    "6.3 `prefers-reduced-motion` ve Page Visibility API entegrasyonu": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976918758
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978295471
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978681879
+      }
+    ],
+    "7. Tüm HTML sayfalarına `topography.js` script tag'i ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976918883
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978690253
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978767294
+      }
+    ],
+    "8. Kontrol noktası — Animasyon ve metin testi": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976918974
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979604256
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979846462
+      }
+    ],
+    "9.1 Yeni \"A\" lettermark SVG oluşturma": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919058
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977484785
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977828694
+      }
+    ],
+    "10.1 CSS containment ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919140
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977834371
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977901755
+      }
+    ],
+    "10.2 `public/js/ui.js` DocumentFragment optimizasyonu": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919229
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977835152
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978209732
+      }
+    ],
+    "10.3 `public/js/ui.js` karakter avatar lazy loading": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919293
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977835935
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977902850
+      }
+    ],
+    "11. Kontrol noktası — Performans testleri": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919362
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979604983
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979847081
+      }
+    ],
+    "12.1 Font boyutu range slider ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919470
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978214336
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978289049
+      }
+    ],
+    "12.2 Altyazı dikey konum slider ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919571
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978215070
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978289954
+      }
+    ],
+    "12.3 Yazı tipi seçimi pill group ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919653
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978215886
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978290994
+      }
+    ],
+    "13.1 `subConfig` veri modelini güncelle": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919749
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978296202
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978682737
+      }
+    ],
+    "13.2 `applySubtitleStyles()` metodunu genişlet": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919857
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978296931
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978683529
+      }
+    ],
+    "13.3 `initSubtitleCustomizer()` içine yeni event binding'ler ekle": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976919927
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978691033
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978766062
+      }
+    ],
+    "13.4 `updateSubtitleSettingsUI()` içine yeni UI sync'leri ekle": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920001
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978775223
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979159230
+      }
+    ],
+    "14.1 Range slider CSS kuralları ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920080
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978297720
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978684380
+      }
+    ],
+    "15. Kontrol noktası — Altyazı ayarları testleri": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920157
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979605748
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979847874
+      }
+    ],
+    "16.1 Kalite butonu ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920231
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978691764
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978768217
+      }
+    ],
+    "17.1 Constructor'a kalite state ve DOM referansları ekle": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920303
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978772851
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979156604
+      }
+    ],
+    "17.2 `initEvents()` içine qualityBtn click handler ekle": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920378
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978773563
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979157317
+      }
+    ],
+    "17.3 `closeAllDropdowns()` metodunu güncelle": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920447
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978774336
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979158200
+      }
+    ],
+    "17.4 `populateQualityMenu()` metodunu oluştur": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920519
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979163435
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979232734
+      }
+    ],
+    "17.5 `playHLS()` içinde `MANIFEST_PARSED` handler'ı güncelle": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920583
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979164195
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979233565
+      }
+    ],
+    "17.6 `playEmbed()` ve `resetPlayerState()` güncelleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920653
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979238083
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979585159
+      }
+    ],
+    "18. Kontrol noktası — Kalite seçici ve genel entegrasyon testleri": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787976920732
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979606638
+      },
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979848739
+      }
+    ],
+    "1. HTML dosyalarında emoji ve metin temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977037039
+      }
+    ],
+    "2. `public/js/i18n.js` string temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977426886
+      }
+    ],
+    "3. `public/js/player.js` ve `public/js/app.js` mesaj temizliği": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977476480
+      }
+    ],
+    "9. `public/assets/logo.svg` yenileme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977828781
+      }
+    ],
+    "5. CSS ve statik arka plan güncelleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787977829499
+      }
+    ],
+    "10. Performans optimizasyonları — CSS ve DocumentFragment": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978209830
+      }
+    ],
+    "12. `public/watch.html` altyazı modal UI revizyonu": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978291088
+      }
+    ],
+    "6. `public/js/topography.js` oluşturma (Animasyonlu Arka Plan)": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978681961
+      }
+    ],
+    "14. `public/css/player.css` range slider stilleri": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978684470
+      }
+    ],
+    "16. `public/watch.html` kalite seçici HTML ekleme": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787978768298
+      }
+    ],
+    "13. `public/js/player.js` altyazı ayarları genişletmesi": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979159315
+      }
+    ],
+    "17. `public/js/player.js` kalite seçici implementasyonu": [
+      {
+        "executionId": "aa6f5b4b-127e-45ca-909a-78988025c85f",
+        "chatSessionId": "sess_6f6df4f8-4e31-48a9-8df3-e1ad86918880",
+        "timestamp": 1787979585278
+      }
+    ]
+  }
+}
