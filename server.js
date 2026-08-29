@@ -39,12 +39,20 @@ app.set("trust proxy", 1);
 app.use(configureSecurityHeaders());
 
 // 3. CORS Policy Hardening (Explicit origins, credentials)
-const allowedOrigins = ENV.CORS_ORIGIN ? ENV.CORS_ORIGIN.split(",") : ["http://localhost:3000", "http://127.0.0.1:3000"];
+const allowedOrigins = ENV.CORS_ORIGIN
+  ? ENV.CORS_ORIGIN.split(",").map(o => o.trim())
+  : ["http://localhost:3000", "http://127.0.0.1:3000"];
+
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || !ENV.IS_PROD) {
-      return callback(null, true);
-    }
+    // Allow requests with no origin (same-origin, curl, mobile apps)
+    if (!origin) return callback(null, true);
+    // Allow in development
+    if (!ENV.IS_PROD) return callback(null, true);
+    // Allow railway.app subdomains automatically
+    if (origin.endsWith(".up.railway.app")) return callback(null, true);
+    // Allow explicitly listed origins
+    if (allowedOrigins.includes(origin)) return callback(null, true);
     return callback(new Error("CORS policy violation"), false);
   },
   credentials: true,
