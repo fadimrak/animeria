@@ -12,6 +12,7 @@ export function configureSecurityHeaders() {
           "https://cdnjs.cloudflare.com",
           "https://cdn.jsdelivr.net",
         ],
+        scriptSrcAttr: ["'unsafe-inline'"], // Allows inline event handlers (onclick, onerror, etc.)
         styleSrc: [
           "'self'",
           "'unsafe-inline'",
