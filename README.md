@@ -1,4 +1,4 @@
-<img width="1903" height="909" alt="Ekran görüntüsü 2026-08-29 135736" src="https://github.com/user-attachments/assets/0911cea9-e5ea-4771-84c2-3afd9d9fb8c7" />
+<img width="1900" height="914" alt="Ekran görüntüsü 2026-08-29 140227" src="https://github.com/user-attachments/assets/c1fd9549-0932-4476-a136-8e79f43302d3" />
 <img width="1902" height="906" alt="Ekran görüntüsü 2026-08-29 135813" src="https://github.com/user-attachments/assets/f52a6783-618e-4fef-9b4b-63f99b72e8fb" />
 
 # ANIMERIA
