@@ -448,7 +448,8 @@ app.get("/api/anime-genres", async (req, res) => {
    ========================================================================= */
 
 // Episode Aggregator with Instant Caching & Ultra-Fast Provider Set
-const FAST_PROVIDERS = new Set(["animedunya", "reanime", "2dhive", "anikoto"]);
+// Note: animedunya removed — blocked by Cloudflare on datacenter IPs
+const FAST_PROVIDERS = new Set(["2dhive", "anikoto", "reanime"]);
 
 function withTimeout(promise, ms = 3500) {
   return Promise.race([
